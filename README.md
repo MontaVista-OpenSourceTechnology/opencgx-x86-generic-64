@@ -32,7 +32,7 @@ cd project
 or
 cd <my directory>
 source setup.sh
-bitbake cgx-complete-image
+bitbake core-image-minimal
 runqemu x86-generic-64 nographic slirp
 ```
 
