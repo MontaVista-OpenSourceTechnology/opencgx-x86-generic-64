@@ -49,7 +49,7 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-gen
 MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.cgx;meta=MV_KERNEL \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.13;meta=MV_KERNELCACHE \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
 "
 #We use 2.3.3 build tools because of kenrel version limitations
 BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/

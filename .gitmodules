@@ -5,7 +5,7 @@
 [submodule "sources/yocto-kernel-cache"]
 	path = sources/yocto-kernel-cache
 	url = https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache
-	branch = yocto-4.13
+	branch = yocto-4.14
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/MontaVista-OpenSourceTechnology/poky.git
