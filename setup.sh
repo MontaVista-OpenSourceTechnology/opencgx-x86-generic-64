@@ -90,9 +90,9 @@ fi
 if [ ! -e $TOPDIR/.drop ] ; then
    if [ ! -e $TOPDIR/.repo ] ; then
       pushd $TOPDIR
-         git pull
-         git submodule init
-         git submodule update --remote
+         git pull || return 1
+         git submodule init || return 1
+         git submodule update --remote || return 1
       popd
    else
       pushd $TOPDIR
