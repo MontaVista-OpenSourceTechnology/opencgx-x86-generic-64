@@ -39,7 +39,7 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=rocko;layer=meta-gnome \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=rocko;layer=meta-multimedia \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=rocko;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=rocko \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=rocko \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=rocko;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=rocko;layer=meta-openstack \
