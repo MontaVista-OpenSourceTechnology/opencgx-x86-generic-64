@@ -233,7 +233,8 @@ if [ "$MAKEDROP" != "1" ] ; then
    else
       THIS_SCRIPT="\$(pwd)/setup.sh"
    fi
-   PROJECT_DIR=\$(dirname \$THIS_SCRIPT)
+   PROJECT_DIR=\$(dirname \$(readlink -f \$THIS_SCRIPT))
+   cd \$PROJECT_DIR
    source $SCRIPT_RELPATH/buildtools/environment-setup-*
    source $SCRIPT_RELPATH/layers/poky/oe-init-build-env \$PROJECT_DIR
 EOF
