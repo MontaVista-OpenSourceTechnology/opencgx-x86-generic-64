@@ -7,22 +7,23 @@ elif [ -n "$ZSH_NAME" ]; then
 else
     THIS_SCRIPT="$(pwd)/setup.sh"
 fi
-THIS_SCRIPT=$(readlink -f $THIS_SCRIPT)
-if [ "$MAKEDROP" = "1" ] ; then
-   if [ -z "$ZSH_NAME" ] && [ "$0" = "$THIS_SCRIPT" ]; then
-       echo "Error: This script needs to be sourced. Please run as '. $THIS_SCRIPT'"
-       exit 1
-   fi
+if [ -z "$ZSH_NAME" ] && [ "$0" = "$THIS_SCRIPT" ]; then
+   EXIT="exit"
+else
+   EXIT="return" 
 fi
+export PATH=$PATH
+THIS_SCRIPT=$(readlink -f $THIS_SCRIPT)
+TOPDIR=$(dirname $THIS_SCRIPT)
 if [ "x$1" = "x" ] ;
 then
-	buildDir=$(pwd)/project
+	buildDir=$TOPDIR/project
         echo "$buildDir used as project." 2>&1
 	echo "To change source $THIS_SCRIPT <builddir>" 2>&1
 else
 	buildDir=$1
 fi
- 
+
 REPO_CONFIG="\
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=sumo;layer=meta \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=sumo;layer=meta-poky \
@@ -51,71 +52,58 @@ DISTRO@mvista-cgx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.cgx;meta=MV_KERNEL \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
 "
+
 #We use 2.3.3 build tools because of kenrel version limitations
 BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
 buildtar=x86_64-buildtools-nativesdk-standalone-2.3.3.sh
 TOPDIR=$(dirname $THIS_SCRIPT)
-if [ ! -d buildtools ] ; then
-   if [ -e $TOPDIR/.buildtools -a -e "$(cat .buildtools 2>/dev/null)" ] ; then
-      buildtar=$(cat .buildtools)
-   else
-      if [ -z "$BUILD_TOOLS_LOCATION" ] ; then
-         yoctoDownloads=http://downloads.yoctoproject.org/releases/yocto/
-         latestRelease=$(echo -n $(lynx -dump $yoctoDownloads -nolist | cut -d / -f 1 | grep yocto- | tail -n 1))
-         BUILD_TOOLS_LOCATION=$yoctoDownloads/$latestRelease/buildtools/
-         releaseDir="$latestRelease"
-         releaseVersion="$(echo $latestRelease | cut -d - -f 2)"
-         buildtar="x86_64-buildtools-nativesdk-standalone-$releaseVersion.sh"
-      fi 
-      if [ -z "$buildtar" ] ; then
-         buildtar=$(lynx -dump -nolist $BUILD_TOOLS_LOCATION |
-            grep \.sh | grep -v md5sum | while read A B C; do echo $A; done)
-      fi
-      if [ "$buildtar" = "[" ] ; then
-         buildtar=$(lynx -dump -nolist $BUILD_TOOLS_LOCATION | 
-             grep \.sh | grep -v md5sum | while read A B C D; do echo $C; done)
-      fi
-
-      if [ ! -e $TOPDIR/$buildtar ] ; then
-             wget -O $TOPDIR/$buildtar $BUILD_TOOLS_LOCATION/$buildtar
-      fi
-   fi
-   if [ ! -d "$TOPDIR/buildtools" ] ; then
-        chmod 755 $TOPDIR/$buildtar
-        bash $TOPDIR/$buildtar -y -d $TOPDIR/buildtools
-        echo $buildtar > $TOPDIR/.buildtools
-   fi
-fi
-
-if [ ! -e $TOPDIR/.drop ] ; then
-   if [ ! -e $TOPDIR/.repo ] ; then
-      pushd $TOPDIR
-         git pull || return 1
-         git submodule init || return 1
-         git submodule update --remote || return 1
-      popd
-   else
-      pushd $TOPDIR
-         repo sync
-      popd
-   fi
-fi
+URL=""
 
 for config in $REPO_CONFIG; do
     VAR=$(echo $config | cut -d @ -f 1)
     VAL=$(echo $config | cut -d @ -f 2)
     if [ "$VAR" = "URL" ] ; then
-       BASE_URL=$VAL
-       MSD_URL=$(dirname $BASE_URL)
-       LATEST_URL=$MSD_URL/latest/source-repos
+       URL=$VAL
+       URLBASE=$(echo $URL | cut -d / -f 1-3)
+       HOST=$(echo $URL | cut -d / -f 3)
     fi
 done
 
-if [ -z "$TEMPLATECONF" ] ; then
+chmod 755 $TOPDIR/bin/*
+if [[ ("x$URLBASE" != "x") && ( "$HOST" = "staging.support.mvista.com" || "$HOST" = "support.mvista.com") ]] ; then
+   git config --global credential.$URLBASE.helper $TOPDIR/bin/git-credential-mvl
+fi
+
+if [ ! -e $TOPDIR/.drop ] ; then
+   if [ ! -e $TOPDIR/.repo ] ; then
+      pushd $TOPDIR 2>/dev/null 1>/dev/null
+         git config pull.rebase True
+         git submodule init || $EXIT 1
+         git submodule update --remote || $EXIT 1
+      popd  2>/dev/null 1>/dev/null
+   else
+      pushd $TOPDIR 2>/dev/null >/dev/null
+         repo sync
+      popd 2>/dev/null >/dev/null
+   fi
+fi
+export BUILD_TOOLS_LOCATION
+export buildtar
+$TOPDIR/bin/fetch-buildtools || $EXIT 1
+
+if [ -z "$TEMPLATECONF" -o ! -d "$TEMPLATECONF" ] ; then
     export TEMPLATECONF=$TOPDIR/layers/meta-montavista-cgx/conf
 fi
+
 source $TOPDIR/buildtools/environment-setup-*
+if [ "$?" != "0" ] ; then
+   $EXIT 1
+fi
+
 source $TOPDIR/layers/poky/oe-init-build-env $buildDir 
+if [ "$?" != "0" ] ; then
+   $EXIT 1
+fi
 export BB_NO_NETWORK="1"
 export LAYERS_RELATIVE="1"
 if [ -z "$LOCAL_SOURCES" ] ; then
@@ -124,8 +112,9 @@ fi
 if [ -e $TOPDIR/.drop -o "$MAKEDROP" = "1" ] ; then
       LOCAL_SOURCES=1
 fi
-echo "# Do not modify, automatically generated" >> conf/local-content.conf
+echo "# Do not modify, automatically generated" > conf/local-content.conf
 echo >> conf/local-content.conf
+
 for config in $REPO_CONFIG; do
     VAR=$(echo $config | cut -d @ -f 1)
     VAL=$(echo $config | cut -d @ -f 2)
@@ -140,8 +129,12 @@ for config in $REPO_CONFIG; do
            fi
        done
        if [ "$MAKEDROP" != "1" ] ; then
-          echo "adding $layerDir/$sublayer"
-          bitbake-layers -F add-layer $TOPDIR/layers/$layerDir/$sublayer >/dev/null
+          mkdir -p $buildDir/.layers
+          if [ ! -e $buildDir/.layers/$layerDir-$sublayer ] ; then
+             echo "adding $layerDir/$sublayer"
+             bitbake-layers -F add-layer $TOPDIR/layers/$layerDir/$sublayer >/dev/null || $EXIT 1
+             touch $buildDir/.layers/$layerDir-$sublayer
+          fi
        fi
     fi
     if [ "$VAR" = "MACHINE" ] ; then
@@ -170,10 +163,11 @@ for config in $REPO_CONFIG; do
           LSOURCE=$TOPDIR/sources/$(basename $TREE | sed s,.git,,)
           LSOURCE_EXPORT=$TOPDIR/sources-export/$(basename $TREE | sed s,.git,,)
           if [ ! -e $TOPDIR/.drop ] ; then
-                   pushd $LSOURCE
-                     git checkout $BRANCH
-                     git pull
-                   popd
+              pushd $LSOURCE 2>/dev/null >/dev/null
+                     git checkout $BRANCH || $EXIT 1
+                     git pull 2>/dev/null >/dev/null
+              popd 2>/dev/null >/dev/null
+              
               if [ ! -e $LSOURCE_EXPORT ] ; then
                  if [ "$BRANCH" = "master" ] ; then
                     git clone --bare $LSOURCE $LSOURCE_EXPORT
@@ -181,23 +175,53 @@ for config in $REPO_CONFIG; do
                     git clone -b $BRANCH --bare $LSOURCE $LSOURCE_EXPORT
                  fi
               else
-                 pushd $LSOURCE_EXPORT
-                     git fetch
-                 popd
+                 pushd $LSOURCE_EXPORT 2>/dev/null >/dev/null
+                     git fetch || $EXIT 1
+                 popd 2>/dev/null >/dev/null
               fi
           fi
           DL_TREE="git://$TOPDIR/sources-export/$(basename $TREE | sed s,.git,,)"
           echo "$(echo $META)_TREE = '$DL_TREE'" >> conf/local-content.conf
           echo "$(echo $META)_BRANCH = '$BRANCH'" >> conf/local-content.conf
+          echo "BB_HASHBASE_WHITELIST_append += \"$(echo $META)_TREE\"" >> conf/local-content.conf
           echo >> conf/local-content.conf
     fi
 done
+if [ -n "$SOURCE_MIRROR_URL" ] ; then
+   if [ -z "$(echo $SOURCE_MIRROR_URL | grep "://")" ] ; then
+      # Assume file
+      SOURCE_MIRROR_URL="file://$SOURCE_MIRROR_URL"
+   fi
+   echo "SOURCE_MIRROR_URL = '$SOURCE_MIRROR_URL'" >> conf/local-content.conf
+   echo >> conf/local-content.conf
+fi
+if [ -n "$PROTECTED_SOURCE_URL" ] ; then 
+   if [ -z "$(echo $PROTECTED_SOURCE_URL | grep "://")" ] ; then
+      # Assume file
+      PROTECTED_SOURCE_URL="file://$PROTECTED_SOURCE_URL"
+   fi
+   echo "PROTECTED_SOURCE_URL = '$PROTECTED_SOURCE_URL'" >> conf/local-content.conf
+   echo >> conf/local-content.conf
+fi
+
+if [ -n "$SSTATE_MIRRORS" ] ; then
+   if [ -z "$(echo $SSTATE_MIRRORS | grep "://")" ] ; then
+      # Assume file
+      SSTATE_MIRRORS="file://$SSTATE_MIRRORS"
+   fi
+        echo "SSTATE_MIRRORS = 'file://.*  $SSTATE_MIRRORS/PATH \n '" >> conf/local-content.conf
+fi
+
 export -n BB_NO_NETWORK
 if [ "$MAKEDROP" != "1" ] ; then
    # Temporary waiting for proper bitbake integration: https://patchwork.openembedded.org/patch/144806/
    RELPATH=$(python -c "from os.path import relpath; print (relpath(\"$TOPDIR/layers\",\"$(pwd)\"))")
    sed -i conf/bblayers.conf -e "s,$TOPDIR/layers/,\${TOPDIR}/$RELPATH/,"
-
+   
+   if [ "$(readlink -f setup.sh)" = "$(readlink -f $TOPDIR/setup.sh)" ] ; then
+      echo "Something went wrong. Exiting to prevent overwritting setup.sh"
+      $EXIT 1
+   fi
    SCRIPT_RELPATH=$(python -c "from os.path import relpath; print (relpath(\"$TOPDIR\",\"`pwd`\"))")
    cat > setup.sh << EOF
    if [ -n "\$BASH_SOURCE" ]; then
@@ -218,3 +242,29 @@ else
    touch $TOPDIR/.drop
    rm -rf $TOPDIR/project
 fi
+if [ "$EXIT" = "exit" ] ; then
+   echo
+   echo "=Setup Complete="
+   echo
+   echo "* Run the following to start building with your project:"
+   echo "source $buildDir/setup.sh"
+   echo "bitbake core-image-minimal"
+   echo
+else
+   echo
+   echo "=Setup Complete="
+   echo
+   echo "* To start building run the following:"
+   echo "bitbake core-image-minimal"
+   echo
+   echo "* To re-setup your build environment for your build later, run:"
+   echo "source $buildDir/setup.sh"
+   echo
+fi
+echo "* To update your content sources run:"
+if [ "$(readlink -f $buildDir)" = "$(readlink -f $TOPDIR/project)" ] ; then
+      echo "source $TOPDIR/setup.sh"
+else
+      echo "source $TOPDIR/setup.sh $buildDir"
+fi
+echo
