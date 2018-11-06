@@ -43,8 +43,8 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
