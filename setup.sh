@@ -23,6 +23,10 @@ then
 else
 	buildDir=$1
 fi
+
+mkdir -p $buildDir
+buildDir=$(readlink -f $buildDir)
+
 REPO_CONFIG="\
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=rocko;layer=meta \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=rocko;layer=meta-poky \
