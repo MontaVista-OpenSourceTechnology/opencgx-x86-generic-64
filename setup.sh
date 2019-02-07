@@ -166,8 +166,8 @@ for config in $REPO_CONFIG; do
           LSOURCE_EXPORT=$TOPDIR/sources-export/$(basename $TREE | sed s,.git,,)
           if [ ! -e $TOPDIR/.drop ] ; then
               pushd $LSOURCE 2>/dev/null >/dev/null
-                     git checkout $BRANCH || $EXIT 1
-                     git pull 2>/dev/null >/dev/null
+                     git checkout  -f $BRANCH || $EXIT 1
+                     git pull -X theirs 2>/dev/null >/dev/null
               popd 2>/dev/null >/dev/null
               
               if [ ! -e $LSOURCE_EXPORT ] ; then
