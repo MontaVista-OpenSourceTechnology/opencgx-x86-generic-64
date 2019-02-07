@@ -1,0 +1,58 @@
+[submodule "sources/linux-mvista-2.4"]
+	path = sources/linux-mvista-2.4
+	url = https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4.git
+	branch = mvl-4.14/msd.cgx
+[submodule "sources/yocto-kernel-cache"]
+	path = sources/yocto-kernel-cache
+	url = https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git
+	branch = yocto-4.14
+[submodule "layers/poky"]
+	path = layers/poky
+	url = https://github.com/MontaVista-OpenSourceTechnology/poky.git
+	branch = thud
+[submodule "layers/meta-openembedded"]
+	path = layers/meta-openembedded
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git
+	branch = thud
+[submodule "layers/meta-clang"]
+	path = layers/meta-clang
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git
+	branch = thud
+[submodule "layers/meta-virtualization"]
+	path = layers/meta-virtualization
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git
+	branch = thud
+[submodule "layers/meta-arm64-ilp32"]
+	path = layers/meta-arm64-ilp32
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-arm64-ilp32.git
+	branch = thud
+[submodule "layers/meta-qa"]
+	path = layers/meta-qa
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git
+	branch = thud
+[submodule "layers/meta-montavista-cgx"]
+	path = layers/meta-montavista-cgx
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git
+	branch = thud
+[submodule "layers/meta-selinux"]
+	path = layers/meta-selinux
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git
+[submodule "layers/meta-security"]
+	path = layers/meta-security
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-security.git
+	branch = thud
+[submodule "layers/meta-cgl"]
+	path = layers/meta-cgl
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git
+[submodule "layers/meta-cloud-services"]
+	path = layers/meta-cloud-services
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git
+	branch = thud
+[submodule "layers/meta-montavista-cgl"]
+	path = layers/meta-montavista-cgl
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl.git
+	branch = thud
+[submodule "layers/meta-montavista-x86-generic-4.14"]
+	path = layers/meta-montavista-x86-generic-4.14
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git
+	branch = thud
