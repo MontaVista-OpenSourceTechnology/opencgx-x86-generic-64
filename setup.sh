@@ -40,11 +40,11 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=sumo;layer=meta-gnome \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=sumo;layer=meta-multimedia \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=sumo;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=sumo \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=sumo \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=sumo;layer=meta-cgl-common \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=sumo;layer=meta-openstack \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=sumo \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=sumo \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git;branch=sumo \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=sumo;layer=meta-qa-framework \

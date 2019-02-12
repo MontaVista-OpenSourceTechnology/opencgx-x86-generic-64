@@ -10,8 +10,8 @@
 	<project name="MontaVista-OpenSourceTechnology/meta-qa.git" remote="github.com" path="layers/meta-qa" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-selinux.git" remote="github.com" path="layers/meta-selinux" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-security.git" remote="github.com" path="layers/meta-security" revision="sumo"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-cgl.git" remote="github.com" path="layers/meta-cgl" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-cloud-services.git" remote="github.com" path="layers/meta-cloud-services" revision="master"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-cgl.git" remote="github.com" path="layers/meta-cgl" revision="sumo"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-cloud-services.git" remote="github.com" path="layers/meta-cloud-services" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgl" remote="github.com" path="layers/meta-montavista-cgl" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git" remote="github.com" path="layers/meta-montavista-x86-generic-4.14" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/linux-mvista-2.4" remote="github.com" path="sources/linux-mvista-2.4" revision="mvl-4.14/msd.cgx"/>

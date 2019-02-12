@@ -37,11 +37,11 @@
 [submodule "layers/meta-cgl"]
 	path = layers/meta-cgl
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git
-	branch = master
+	branch = sumo 
 [submodule "layers/meta-cloud-services"]
 	path = layers/meta-cloud-services
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git
-	branch = master
+	branch = sumo 
 [submodule "layers/meta-montavista-cgl"]
 	path = layers/meta-montavista-cgl
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl
