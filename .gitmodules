@@ -1,11 +1,11 @@
-[submodule "sources/linux-mvista-2.4"]
-	path = sources/linux-mvista-2.4
-	url = https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4.git
-	branch = mvl-4.14/msd.cgx
+[submodule "sources/linux-mvista-2.6"]
+	path = sources/linux-mvista-2.6
+	url = https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.6.git
+	branch = mvl-4.19/msd.cgx
 [submodule "sources/yocto-kernel-cache"]
 	path = sources/yocto-kernel-cache
 	url = https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git
-	branch = yocto-4.14
+	branch = yocto-4.19
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/MontaVista-OpenSourceTechnology/poky.git
@@ -52,7 +52,7 @@
 	path = layers/meta-montavista-cgl
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl.git
 	branch = thud
-[submodule "layers/meta-montavista-x86-generic-4.14"]
-	path = layers/meta-montavista-x86-generic-4.14
-	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git
+[submodule "layers/meta-montavista-x86-generic-4.19"]
+	path = layers/meta-montavista-x86-generic-4.19
+	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.19.git
 	branch = thud
