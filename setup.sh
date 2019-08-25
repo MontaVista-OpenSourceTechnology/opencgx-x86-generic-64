@@ -46,13 +46,13 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=mas
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.19.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
 MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.cgx;meta=MV_KERNEL \
-SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.6;branch=mvl-4.19/msd.cgx;meta=MV_KERNEL \
+SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.19;meta=MV_KERNELCACHE \
 "
 
 #We use 2.3.3 build tools because of kenrel version limitations
