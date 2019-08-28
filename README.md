@@ -5,8 +5,8 @@ Montavista Software, LLC. release of x86-generic-64.
 How to use:
 ==========
 ```
-git clone --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-x86-generic-64-4.14-2.6
-cd opencgx-x86-generic-64-4.14-2.6
+git clone --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-x86-generic-64-4.19-2.6
+cd opencgx-x86-generic-64-4.19-2.6
 source setup.sh
 ```
 Optionally, you can pass setup.sh a directory name to use instead of the
@@ -39,7 +39,7 @@ poky/oe-init-build-env script.
 directory layout:
 ================
 ```
-opencgx-x86-generic-64-4.14-2.6/
+opencgx-x86-generic-64-4.19-2.6/
        project - bitbake project for the x86-generic-64 project build
        buildtools - build tools to provide minimal build requirement for poky builds
        layers - layers for building x86-generic-64 project
