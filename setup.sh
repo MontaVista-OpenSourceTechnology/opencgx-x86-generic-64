@@ -34,13 +34,13 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-networking \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-webserver \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=master \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-perl \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-gnome \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-multimedia \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
