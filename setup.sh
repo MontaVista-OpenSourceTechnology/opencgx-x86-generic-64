@@ -56,7 +56,7 @@ DISTRO@mvista-cgx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.6.git;branch=mvl-4.19/msd.cgx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache.git;branch=yocto-4.19 \
 "
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
+BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.4.4/buildtools/
 TOPDIR=$(dirname $THIS_SCRIPT)
 buildtar=""
 URL=""
