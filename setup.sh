@@ -55,9 +55,9 @@ SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branc
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
 "
 
-#We use 2.3.3 build tools because of kenrel version limitations
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
-buildtar=x86_64-buildtools-nativesdk-standalone-2.3.3.sh
+#We use 2.4.4 build tools because of kenrel version limitations
+BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.4.4/buildtools/
+buildtar=x86_64-buildtools-nativesdk-standalone-2.4.4.sh
 TOPDIR=$(dirname $THIS_SCRIPT)
 URL=""
 
