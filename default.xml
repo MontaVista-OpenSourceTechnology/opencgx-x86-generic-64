@@ -16,5 +16,5 @@
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-x86-generic-4.14.git" remote="github.com" path="layers/meta-montavista-x86-generic-4.14" revision="sumo"/>
 	<project name="MontaVista-OpenSourceTechnology/linux-mvista-2.4" remote="github.com" path="sources/linux-mvista-2.4" revision="mvl-4.14/msd.cgx"/>
 	<project name="MontaVista-OpenSourceTechnology/yocto-kernel-cache" remote="github.com" path="sources/yocto-kernel-cache" revision="yocto-4.14"/>
-	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64-4.14-2.5" remote="github.com" path="." revision="sumo"/>
+	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64" remote="github.com" path="." revision="sumo"/>
 </manifest>
