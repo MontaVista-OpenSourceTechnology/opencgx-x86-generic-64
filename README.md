@@ -6,7 +6,7 @@ How to use:
 ==========
 
 ```
-git clone --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-x86-generic-64
+git clone -b rocko --recursive https://github.com/MontaVista-OpenSourceTechnology/opencgx-x86-generic-64
 cd opencgx-x86-generic-64
 source setup.sh
 ```
