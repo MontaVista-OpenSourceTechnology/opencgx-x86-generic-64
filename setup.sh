@@ -57,11 +57,11 @@ DISTRO@mvista-cgx \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/linux-mvista-2.4;branch=mvl-4.14/msd.cgx;meta=MV_KERNEL \
 SOURCE@https://github.com/MontaVista-OpenSourceTechnology/yocto-kernel-cache;branch=yocto-4.14;meta=MV_KERNELCACHE \
 "
-#We use 2.3.3 build tools because of kenrel version limitations
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.3.3/buildtools/
+#We use 2.4.4 build tools because of kenrel version limitations
+BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-2.4.4/buildtools/
 
 TOPDIR=$(dirname $THIS_SCRIPT)
-buildtar=x86_64-buildtools-nativesdk-standalone-2.3.3.sh
+buildtar=x86_64-buildtools-nativesdk-standalone-2.4.4.sh
 URL=""
 
 for config in $REPO_CONFIG; do
