@@ -25,37 +25,37 @@ else
 fi
 
 REPO_CONFIG="\
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-poky \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-yocto-bsp \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-oe \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-python \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-filesystems \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-networking \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-webserver \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=dunfell;layer=meta \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=dunfell;layer=meta-poky \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=dunfell;layer=meta-yocto-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-oe \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-python \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-filesystems \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-networking \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-webserver \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-perl \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-gnome \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-multimedia \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=dunfell \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-perl \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-gnome \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-multimedia \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=dunfell;layer=meta-xfce \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=dunfell \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=dunfell;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=dunfell \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=dunfell \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=dunfell;layer=meta-qa-framework \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=dunfell;layer=meta-qa-testsuites \
 MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 "
 
 #We use 2.4.4 build tools because of kenrel version limitations
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-3.0.1/buildtools/
-buildtar=x86_64-buildtools-nativesdk-standalone-3.0.1.sh
+BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/milestones/yocto-3.1_M3/buildtools/
+buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.0%2Bsnapshot-20200315.sh
 TOPDIR=$(dirname $THIS_SCRIPT)
 URL=""
 
