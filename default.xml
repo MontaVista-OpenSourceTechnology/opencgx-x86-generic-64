@@ -2,19 +2,18 @@
 <manifest>
 	<remote fetch="https://github.com" name="github.com"/>
 
-	<project name="MontaVista-OpenSourceTechnology/poky.git" remote="github.com" path="layers/poky" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-openembedded.git" remote="github.com" path="layers/meta-openembedded" revision="master"/>
+	<project name="MontaVista-OpenSourceTechnology/poky.git" remote="github.com" path="layers/poky" revision="dunfell"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-openembedded.git" remote="github.com" path="layers/meta-openembedded" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-clang.git" remote="github.com" path="layers/meta-clang" revision="master"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-virtualization.git" remote="github.com" path="layers/meta-virtualization" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgx.git" remote="github.com" path="layers/meta-montavista-cgx" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-qa.git" remote="github.com" path="layers/meta-qa" revision="master"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgx.git" remote="github.com" path="layers/meta-montavista-cgx" revision="dunfell"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-qa.git" remote="github.com" path="layers/meta-qa" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-selinux.git" remote="github.com" path="layers/meta-selinux" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-security.git" remote="github.com" path="layers/meta-security" revision="master"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-security.git" remote="github.com" path="layers/meta-security" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-cgl.git" remote="github.com" path="layers/meta-cgl" revision="master"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-cloud-services.git" remote="github.com" path="layers/meta-cloud-services" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgl" remote="github.com" path="layers/meta-montavista-cgl" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/meta-montavista-x86-generic.git" remote="github.com" path="layers/meta-montavista-x86-generic-4.19" revision="master"/>
-	<project name="MontaVista-OpenSourceTechnology/linux-mvista-2.6" remote="github.com" path="sources/linux-mvista-2.6" revision="mvl-4.19/msd.cgx"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgl" remote="github.com" path="layers/meta-montavista-cgl" revision="dunfell"/>
+	<project name="MontaVista-OpenSourceTechnology/meta-montavista-x86-generic.git" remote="github.com" path="layers/meta-montavista-x86-generic" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/yocto-kernel-cache" remote="github.com" path="sources/yocto-kernel-cache" revision="yocto-4.19"/>
-	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64" remote="github.com" path="." revision="next"/>
+	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64" remote="github.com" path="." revision="dunfell"/>
 </manifest>
