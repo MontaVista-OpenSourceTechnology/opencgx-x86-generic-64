@@ -14,6 +14,5 @@
 	<project name="MontaVista-OpenSourceTechnology/meta-cloud-services.git" remote="github.com" path="layers/meta-cloud-services" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-cgl" remote="github.com" path="layers/meta-montavista-cgl" revision="dunfell"/>
 	<project name="MontaVista-OpenSourceTechnology/meta-montavista-x86-generic.git" remote="github.com" path="layers/meta-montavista-x86-generic" revision="dunfell"/>
-	<project name="MontaVista-OpenSourceTechnology/yocto-kernel-cache" remote="github.com" path="sources/yocto-kernel-cache" revision="yocto-4.19"/>
-	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64" remote="github.com" path="." revision="dunfell"/>
+	<project name="MontaVista-OpenSourceTechnology/opencgx-x86-generic-64" remote="github.com" path="." revision="master"/>
 </manifest>
