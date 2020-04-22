@@ -53,9 +53,8 @@ MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 "
 
-#We use 2.4.4 build tools because of kenrel version limitations
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/milestones/yocto-3.1_M3/buildtools/
-buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.0%2Bsnapshot-20200315.sh
+BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-3.1/buildtools/
+buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.1.sh
 TOPDIR=$(dirname $THIS_SCRIPT)
 URL=""
 
