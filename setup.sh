@@ -53,8 +53,8 @@ MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 "
 
-BUILD_TOOLS_LOCATION=http://downloads.yoctoproject.org/releases/yocto/yocto-3.1/buildtools/
-buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.1.sh
+BUILD_TOOLS_LOCATION=https://github.com/MontaVista-OpenSourceTechnology/buildtools-tarballs/raw/master/
+buildtar=x86_64-buildtools-extended-nativesdk-standalone-3.1.0.sh
 TOPDIR=$(dirname $THIS_SCRIPT)
 URL=""
 
