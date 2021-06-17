@@ -130,7 +130,10 @@ for config in $REPO_CONFIG; do
           mkdir -p $buildDir/.layers
           if [ ! -e $buildDir/.layers/$layerDir-$sublayer ] ; then
              echo "adding $layerDir/$sublayer"
-             bitbake-layers -F add-layer $TOPDIR/layers/$layerDir/$sublayer >/dev/null || $EXIT 1
+             if ! bitbake-layers -F add-layer $TOPDIR/layers/$layerDir/$sublayer >/dev/null ; then
+                  bitbake-layers add-layer $TOPDIR/layers/$layerDir/$sublayer
+                  $EXIT 1
+             fi
              touch $buildDir/.layers/$layerDir-$sublayer
           fi
        fi
