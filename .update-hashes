@@ -11,6 +11,7 @@ pipeline {
         stage('Hash Update') {
             steps {
                 sh '''
+                bash setup.sh
                 git add layers sources || true
                 if [ -n "$(git status --porcelain -uno)" ] ; then
                     git commit -m "Update git update repository hash values $(date +%y%m%d%H%M)"
