@@ -12,7 +12,8 @@ pipeline {
             steps {
                 sh '''
                 bash setup.sh
-                git add layers sources || true
+                git add layers  || true
+                git add sources || true
                 if [ -n "$(git status --porcelain -uno)" ] ; then
                     git commit -m "Update git update repository hash values $(date +%y%m%d%H%M)"
                     git push origin HEAD:$BRANCH_NAME
