@@ -11,10 +11,13 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
+                export
                 bash setup.sh
 	        TARGET=\$(cat bin/fetch-sources | grep ^DEFAULT_SOURCE_TARGET | cut -d = -f 2)
                 source project/setup.sh
                 cp ~/oe/conf/site.conf conf
+                mv tmp tmp-save
+                rm -rf tmp-save
                 bitbake -k \$TARGET
                 '''
             }
