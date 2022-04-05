@@ -44,7 +44,6 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=kirkstone-cgx;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=kirkstone-cgx \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=kirkstone-cgx;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=kirkstone-cgx \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=kirkstone-cgx;layer=meta-qa-framework \
