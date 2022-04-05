@@ -175,7 +175,7 @@ else:
    baseurl=uri + "/" + os.path.basename(cwd)
 remote=baseurl.split("/")[2]
 location="."
-branch="master"
+branch="kirkstone-cgx"
 name = "/".join(baseurl.split("/")[3:])
 if not name.endswith(".git"):
     name = name + ".git"
