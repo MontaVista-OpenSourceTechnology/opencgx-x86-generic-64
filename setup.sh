@@ -90,7 +90,7 @@ export buildtar
 $TOPDIR/bin/fetch-buildtools || $EXIT 1
 
 if [ -z "$TEMPLATECONF" -o ! -d "$TEMPLATECONF" ] ; then
-    export TEMPLATECONF=$TOPDIR/layers/meta-montavista-cgx/conf
+    export TEMPLATECONF=$TOPDIR/layers/meta-montavista-cgx/conf/templates/default
 fi
 
 source $TOPDIR/buildtools/environment-setup-*
