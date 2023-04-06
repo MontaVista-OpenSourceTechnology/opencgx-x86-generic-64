@@ -25,30 +25,30 @@ else
 fi
 
 REPO_CONFIG="\
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-poky \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-yocto-bsp \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-oe \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-python \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-filesystems \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-networking \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-webserver \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-perl \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-gnome \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-multimedia \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=mickledore;layer=meta \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=mickledore;layer=meta-poky \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=mickledore;layer=meta-yocto-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-oe \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-python \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-filesystems \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-networking \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-webserver \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-perl \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-gnome \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-multimedia \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=mickledore;layer=meta-xfce \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=mickledore;layer=meta-cgl-common \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=mickledore;layer=meta-openstack \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=mickledore \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=mickledore;layer=meta-qa-framework \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=mickledore;layer=meta-qa-testsuites \
 MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 "
