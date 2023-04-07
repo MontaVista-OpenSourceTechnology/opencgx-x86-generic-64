@@ -44,7 +44,6 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=mickledore \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=mickledore;layer=meta-cgl-common \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=mickledore \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=mickledore;layer=meta-openstack \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=mickledore \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=mickledore \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=mickledore;layer=meta-qa-framework \
