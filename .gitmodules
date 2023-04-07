@@ -5,7 +5,7 @@
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git
-	branch = mickledore
+	branch = master 
 [submodule "layers/meta-clang"]
 	path = layers/meta-clang
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git
@@ -13,27 +13,27 @@
 [submodule "layers/meta-virtualization"]
 	path = layers/meta-virtualization
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git
-	branch = mickledore 
+	branch = master 
 [submodule "layers/meta-montavista-cgx"]
 	path = layers/meta-montavista-cgx
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git
-	branch = mickledore
+	branch = master
 [submodule "layers/meta-selinux"]
 	path = layers/meta-selinux
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git
-        branch = mickledore 
+        branch = master 
 [submodule "layers/meta-security"]
 	path = layers/meta-security
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-security.git
-	branch = mickledore
+	branch = master
 [submodule "layers/meta-cgl"]
 	path = layers/meta-cgl
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git
-	branch = mickledore
+	branch = master
 [submodule "layers/meta-cloud-services"]
 	path = layers/meta-cloud-services
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git
-	branch = mickledore
+	branch = master
 [submodule "layers/meta-montavista-cgl"]
 	path = layers/meta-montavista-cgl
 	url = https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl
