@@ -25,30 +25,30 @@ else
 fi
 
 REPO_CONFIG="\
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-poky \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-yocto-bsp \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-oe \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-python \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-filesystems \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-networking \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-webserver \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-perl \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-gnome \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-multimedia \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-xfce \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master;layer=meta-openstack \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=langdale;layer=meta \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=langdale;layer=meta-poky \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=langdale;layer=meta-yocto-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-oe \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-python \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-filesystems \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-networking \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-webserver \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-clang.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-selinux.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-virtualization.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgx.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-perl \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-gnome \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-multimedia \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=langdale;layer=meta-xfce \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=langdale;layer=meta-cgl-common \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=langdale;layer=meta-openstack \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=langdale \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=langdale;layer=meta-qa-framework \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=langdale;layer=meta-qa-testsuites \
 MACHINE@x86-generic-64 \
 DISTRO@mvista-cgx \
 "
@@ -148,7 +148,7 @@ for config in $REPO_CONFIG; do
     fi
     if [ "$VAR" = "SOURCE" ] ; then
           META=""
-          BRANCH="master"
+          BRANCH="langdale"
           TREE=$(echo $VAL | cut -d \; -f 1)
           for option in $(echo $VAL | sed s,\;,\ ,g); do
               OVAR=$(echo $option | cut -d = -f 1) 
@@ -170,7 +170,7 @@ for config in $REPO_CONFIG; do
               popd 2>/dev/null >/dev/null
               
               if [ ! -e $LSOURCE_EXPORT ] ; then
-                 if [ "$BRANCH" = "master" ] ; then
+                 if [ "$BRANCH" = "langdale" ] ; then
                     git clone --bare $LSOURCE $LSOURCE_EXPORT
                  else
                     git clone -b $BRANCH --bare $LSOURCE $LSOURCE_EXPORT
