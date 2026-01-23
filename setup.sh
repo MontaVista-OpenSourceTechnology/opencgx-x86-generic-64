@@ -28,9 +28,7 @@ mkdir -p $buildDir
 buildDir=$(readlink -f $buildDir)
 
 REPO_CONFIG="\
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-poky \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/poky.git;branch=master;layer=meta-yocto-bsp \
+LAYER@https://github.com/MontaVista-OpenSourceTechnology/openembedded-core;branch=master;layer=meta \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-oe \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-python \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-networking \
@@ -139,7 +137,7 @@ if [ "$?" != "0" ] ; then
    $EXIT 1
 fi
 
-source $TOPDIR/layers/poky/oe-init-build-env $buildDir 
+source $TOPDIR/layers/openembedded-core/oe-init-build-env $buildDir 
 if [ "$?" != "0" ] ; then
    $EXIT 1
 fi
