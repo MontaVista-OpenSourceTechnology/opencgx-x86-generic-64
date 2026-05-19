@@ -43,9 +43,6 @@ LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;b
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-multimedia \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-openembedded.git;branch=master;layer=meta-xfce \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-security.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cgl.git;branch=master;layer=meta-cgl-common \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-cloud-services.git;branch=master \
-LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-cgl;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-montavista-x86-generic;branch=master \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-framework \
 LAYER@https://github.com/MontaVista-OpenSourceTechnology/meta-qa.git;branch=master;layer=meta-qa-testsuites \
@@ -283,7 +280,7 @@ if [ "$MAKEDROP" != "1" ] ; then
    PROJECT_DIR=\$(dirname \$(readlink -f \$THIS_SCRIPT))
    cd \$PROJECT_DIR
    source $SCRIPT_RELPATH/buildtools/environment-setup-*
-   source $SCRIPT_RELPATH/layers/poky/oe-init-build-env \$PROJECT_DIR
+   source $SCRIPT_RELPATH/layers/openembedded-core/oe-init-build-env \$PROJECT_DIR
 EOF
    rm -rf tmp-glibc
 else
